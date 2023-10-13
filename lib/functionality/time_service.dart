@@ -39,7 +39,7 @@ class TimerService extends ChangeNotifier {
   }
 
   void handleNextRound() {
-    if (currentState == "FOCUS") {
+    if (currentState == "FOCUS" && rounds != 3) {
       currentState = "BREAK";
       currentDuration = 300; // equal 5 minutes
       selectedTime = 300;
@@ -61,7 +61,6 @@ class TimerService extends ChangeNotifier {
       selectedTime = 1500;
       rounds = 0;
     }
-
     notifyListeners();
   }
 }
