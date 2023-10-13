@@ -11,6 +11,7 @@ TextStyle textStyle(double size, [Color? color, FontWeight? fw]) {
 
 // in second and we need to convert it back to minute
 List selectableTimes = [
+  "0",
   "300",
   "600",
   "900",
@@ -33,7 +34,7 @@ Color renderColor(String currentState) {
   } else if(currentState == "BREAK") {
     color = Colors.lightBlueAccent;
   } else {
-    color = Colors.lightGreenAccent;
+    color = Colors.green;
   }
 
   return color;

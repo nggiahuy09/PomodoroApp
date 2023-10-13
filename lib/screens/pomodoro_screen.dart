@@ -25,9 +25,7 @@ class PomodoroScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-              onPressed: () {
-                // TODO: add refresh function
-              },
+              onPressed: Provider.of<TimerService>(context, listen: false).reset,
               icon: const Icon(
                 Icons.refresh_sharp,
                 color: Colors.white,

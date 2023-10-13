@@ -12,7 +12,7 @@ class TimeOptions extends StatelessWidget {
 
     return SingleChildScrollView(
       controller: ScrollController(
-        initialScrollOffset: 170, // = 2x width's selectableTimes Container (140) + 3x margin (30)
+        initialScrollOffset: 250, // = 3x width's selectableTimes Container (210) + 4x margin (40)
       ),
       scrollDirection: Axis.horizontal,
       child: Row(
