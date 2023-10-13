@@ -30,11 +30,11 @@ Color renderColor(String currentState) {
   Color color;
 
   if(currentState == "FOCUS") {
-    color = Colors.redAccent;
+    color = const Color.fromARGB(255, 255, 46, 46);
   } else if(currentState == "BREAK") {
-    color = Colors.lightBlueAccent;
+    color = const Color.fromARGB(255, 46, 46, 255);
   } else {
-    color = Colors.green;
+    color = const Color.fromARGB(255, 0, 163, 0);
   }
 
   return color;

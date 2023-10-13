@@ -20,7 +20,7 @@ class PomodoroScreen extends StatelessWidget {
         elevation: 0,
         backgroundColor: renderColor(provider.currentState),
         title: Text(
-          'P O M O D O R O',
+          'POMODORO',
           style: textStyle(28.0, Colors.white, FontWeight.w700),
         ),
         actions: [

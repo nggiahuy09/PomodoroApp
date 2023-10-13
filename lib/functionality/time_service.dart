@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class TimerService extends ChangeNotifier {
   late Timer timer;
@@ -47,6 +48,15 @@ class TimerService extends ChangeNotifier {
     rounds = 0;
     goals = 0;
 
+    Fluttertoast.showToast(
+      msg: "Time to have BREAK",
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIosWeb: 1,
+      // backgroundColor: const Color.fromARGB(255, 46, 46, 255),
+      // textColor: Colors.white,
+      fontSize: 16.0,
+    );
     notifyListeners();
   }
 
@@ -57,21 +67,64 @@ class TimerService extends ChangeNotifier {
       selectedTime = 300;
       rounds++;
       goals++;
+
+      // show Toast
+      Fluttertoast.showToast(
+        msg: "IT'S TIME TO BREAK",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 1,
+        // backgroundColor: const Color.fromARGB(255, 46, 46, 255),
+        // textColor: Colors.white,
+        fontSize: 16.0,
+      );
     } else if (currentState == "BREAK") {
       currentState = "FOCUS";
       currentDuration = 1500;
       selectedTime = 1500;
+
+      // show Toast
+      Fluttertoast.showToast(
+        msg: "IT'S TIME TO FOCUS",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 1,
+        // backgroundColor: const Color.fromARGB(255, 255, 46, 46),
+        // textColor: Colors.white,
+        fontSize: 16.0,
+      );
     } else if (currentState == "FOCUS" && rounds == 3) {
       currentState = "LONG BREAK";
       currentDuration = 1500;
       selectedTime = 1500;
       rounds++;
       goals++;
+
+      // show Toast
+      Fluttertoast.showToast(
+        msg: "IT'S TIME TO LONG BREAK",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        // timeInSecForIosWeb: 1,
+        // backgroundColor: const Color.fromARGB(255, 0, 163, 0),
+        textColor: Colors.white,
+        fontSize: 16.0,
+      );
     } else if (currentState == "LONG BREAK") {
       currentState = "FOCUS";
       currentDuration = 1500;
       selectedTime = 1500;
       rounds = 0;
+
+      Fluttertoast.showToast(
+        msg: "IT'S TIME TO FOCUS",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        // timeInSecForIosWeb: 1,
+        // backgroundColor: const Color.fromARGB(255, 255, 46, 46),
+        textColor: Colors.white,
+        fontSize: 16.0,
+      );
     }
     notifyListeners();
   }
