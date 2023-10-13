@@ -24,3 +24,17 @@ List selectableTimes = [
   "3300",
   "3600",
 ];
+
+Color renderColor(String currentState) {
+  Color color;
+
+  if(currentState == "FOCUS") {
+    color = Colors.redAccent;
+  } else if(currentState == "BREAK") {
+    color = Colors.lightBlueAccent;
+  } else {
+    color = Colors.lightGreenAccent;
+  }
+
+  return color;
+}
