@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:pomodoro/functionality/notifications.dart';
 
 class TimerService extends ChangeNotifier {
   late Timer timer;
@@ -60,13 +61,16 @@ class TimerService extends ChangeNotifier {
     notifyListeners();
   }
 
-  void handleNextRound() {
+  Future<void> handleNextRound() async {
     if (currentState == "FOCUS" && rounds != 3) {
       currentState = "BREAK";
       currentDuration = 300; // equal 5 minutes
       selectedTime = 300;
       rounds++;
       goals++;
+
+      // Player.stop();
+      Player.play('finish_focus.mp3');
 
       // show Toast
       Fluttertoast.showToast(
@@ -82,6 +86,9 @@ class TimerService extends ChangeNotifier {
       currentState = "FOCUS";
       currentDuration = 1500;
       selectedTime = 1500;
+
+      Player.stop();
+      Player.play('finish_break_2.mp3');
 
       // show Toast
       Fluttertoast.showToast(
@@ -100,6 +107,9 @@ class TimerService extends ChangeNotifier {
       rounds++;
       goals++;
 
+      Player.stop();
+      Player.play('finish_focus.mp3');
+
       // show Toast
       Fluttertoast.showToast(
         msg: "IT'S TIME TO LONG BREAK",
@@ -115,6 +125,9 @@ class TimerService extends ChangeNotifier {
       currentDuration = 1500;
       selectedTime = 1500;
       rounds = 0;
+
+      Player.stop();
+      Player.play('finish_break_2.mp3');
 
       Fluttertoast.showToast(
         msg: "IT'S TIME TO FOCUS",
