@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pomodoro/functionality/time_service.dart';
 import 'package:pomodoro/util/utils.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +19,15 @@ class TimeOptions extends StatelessWidget {
       child: Row(
         children: selectableTimes.map((time) {
           return InkWell(
-            onTap: () => provider.selectTime(double.parse(time)),
+            onTap: () {
+              if(provider.timerPlaying != true) {
+                provider.selectTime(double.parse(time));
+              } else {
+                Fluttertoast.showToast(
+                    msg: "PLEASE PRESS THE PAUSE BUTTON FIRST"
+                );
+              }
+            },
             child: Container(
               margin: const EdgeInsets.only(left: 10),
               width: 70,

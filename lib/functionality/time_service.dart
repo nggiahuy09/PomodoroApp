@@ -50,12 +50,9 @@ class TimerService extends ChangeNotifier {
     goals = 0;
 
     Fluttertoast.showToast(
-      msg: "Time to have BREAK",
+      msg: "RESET POMODORO",
       toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.BOTTOM,
-      timeInSecForIosWeb: 1,
-      // backgroundColor: const Color.fromARGB(255, 46, 46, 255),
-      // textColor: Colors.white,
       fontSize: 16.0,
     );
     notifyListeners();
@@ -77,9 +74,6 @@ class TimerService extends ChangeNotifier {
         msg: "IT'S TIME TO BREAK",
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.BOTTOM,
-        timeInSecForIosWeb: 1,
-        // backgroundColor: const Color.fromARGB(255, 46, 46, 255),
-        // textColor: Colors.white,
         fontSize: 16.0,
       );
     } else if (currentState == "BREAK") {
@@ -95,9 +89,6 @@ class TimerService extends ChangeNotifier {
         msg: "IT'S TIME TO FOCUS",
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.BOTTOM,
-        timeInSecForIosWeb: 1,
-        // backgroundColor: const Color.fromARGB(255, 255, 46, 46),
-        // textColor: Colors.white,
         fontSize: 16.0,
       );
     } else if (currentState == "FOCUS" && rounds == 3) {
@@ -115,8 +106,6 @@ class TimerService extends ChangeNotifier {
         msg: "IT'S TIME TO LONG BREAK",
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.BOTTOM,
-        // timeInSecForIosWeb: 1,
-        // backgroundColor: const Color.fromARGB(255, 0, 163, 0),
         textColor: Colors.white,
         fontSize: 16.0,
       );
@@ -133,8 +122,6 @@ class TimerService extends ChangeNotifier {
         msg: "IT'S TIME TO FOCUS",
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.BOTTOM,
-        // timeInSecForIosWeb: 1,
-        // backgroundColor: const Color.fromARGB(255, 255, 46, 46),
         textColor: Colors.white,
         fontSize: 16.0,
       );
