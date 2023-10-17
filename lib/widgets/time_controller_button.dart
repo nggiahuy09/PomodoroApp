@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pomodoro/functionality/time_service.dart';
+import 'package:pomodoro/util/utils.dart';
 import 'package:provider/provider.dart';
 
 class TimeController extends StatefulWidget {
@@ -30,7 +31,7 @@ class _TimeControllerState extends State<TimeController> {
         icon: Icon(
           provider.timerPlaying == true ? Icons.pause : Icons.play_arrow,
           size: 55,
-          color: Colors.white,
+          color: renderColor(provider.currentState),
         ),
       ),
     );

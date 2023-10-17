@@ -17,12 +17,12 @@ class ProgressWidget extends StatelessWidget {
           children: [
             Text(
               "${provider.rounds}/4",
-              style: textStyle(30, Colors.white, FontWeight.bold),
+              style: textStyle(30, renderColor(provider.currentState), FontWeight.bold),
             ),
             const SizedBox(height: 15,),
             Text(
               'ROUND',
-              style: textStyle(30, Colors.white, FontWeight.bold),
+              style: textStyle(30, renderColor(provider.currentState), FontWeight.bold),
             ),
           ],
         ),
@@ -30,12 +30,12 @@ class ProgressWidget extends StatelessWidget {
           children: [
             Text(
               "${provider.goals}/12",
-              style: textStyle(30, Colors.white, FontWeight.bold),
+              style: textStyle(30, renderColor(provider.currentState), FontWeight.bold),
             ),
             const SizedBox(height: 15,),
             Text(
               'GOAL',
-              style: textStyle(30, Colors.white, FontWeight.bold),
+              style: textStyle(30, renderColor(provider.currentState), FontWeight.bold),
             ),
           ]
         ),

@@ -26,16 +26,26 @@ List selectableTimes = [
   "3600",
 ];
 
-Color renderColor(String currentState) {
+Color renderBackgroundColor(String currentState) {
   Color color;
 
   if(currentState == "FOCUS") {
-    color = const Color.fromARGB(255, 255, 46, 46);
+    color = const Color.fromARGB(255, 239, 75, 75);
   } else if(currentState == "BREAK") {
-    color = const Color.fromARGB(255, 46, 46, 255);
+    color = const Color.fromARGB(255, 145, 145, 144);
   } else {
-    color = const Color.fromARGB(255, 0, 163, 0);
+    color = const Color.fromARGB(255, 242, 227, 201);
   }
 
+  return color;
+}
+
+Color renderColor(String currentState) {
+  Color color = Colors.white;
+  if(currentState == "FOCUS" || currentState == "BREAK") {
+    color = Colors.white;
+  } else {
+    color = Colors.black54;
+  }
   return color;
 }

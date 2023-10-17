@@ -15,7 +15,7 @@ class TimerCard extends StatelessWidget {
       children: [
         Text(
           provider.currentState,
-          style: textStyle(35, Colors.white, FontWeight.w700),
+          style: textStyle(35, renderColor(provider.currentState), FontWeight.w700),
         ),
         const SizedBox(
           height: 40,
@@ -27,7 +27,7 @@ class TimerCard extends StatelessWidget {
               width: MediaQuery.of(context).size.width / 3.2,
               height: 170,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: renderColor(provider.currentState),
                 borderRadius: BorderRadius.circular(15),
                 boxShadow: [
                   BoxShadow(
@@ -41,19 +41,19 @@ class TimerCard extends StatelessWidget {
               child: Center(
                 child: Text(
                   (provider.currentDuration ~/ 60).toString(),
-                  style: textStyle(70, renderColor(provider.currentState), FontWeight.bold),
+                  style: textStyle(70, renderBackgroundColor(provider.currentState), FontWeight.bold),
                 ),
               ),
             ),
             Text(
               " : ",
-              style: textStyle(50, Colors.white, FontWeight.w700),
+              style: textStyle(50, renderColor(provider.currentState), FontWeight.w700),
             ),
             Container(
               width: MediaQuery.of(context).size.width / 3.2,
               height: 170,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: renderColor(provider.currentState),
                 borderRadius: BorderRadius.circular(15),
                 boxShadow: [
                   BoxShadow(
@@ -67,7 +67,7 @@ class TimerCard extends StatelessWidget {
               child: Center(
                 child: Text(
                   seconds == 0 ? "${seconds.round()}0" : seconds.round().toString(),
-                  style: textStyle(70, renderColor(provider.currentState), FontWeight.bold),
+                  style: textStyle(70, renderBackgroundColor(provider.currentState), FontWeight.bold),
                 ),
               ),
             ),

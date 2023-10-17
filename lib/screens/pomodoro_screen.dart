@@ -15,20 +15,20 @@ class PomodoroScreen extends StatelessWidget {
     final provider = Provider.of<TimerService>(context);
 
     return Scaffold(
-      backgroundColor: renderColor(provider.currentState),
+      backgroundColor: renderBackgroundColor(provider.currentState),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: renderColor(provider.currentState),
+        backgroundColor: renderBackgroundColor(provider.currentState),
         title: Text(
           'POMODORO',
-          style: textStyle(28.0, Colors.white, FontWeight.w700),
+          style: textStyle(28.0, renderColor(provider.currentState), FontWeight.w700),
         ),
         actions: [
           IconButton(
               onPressed: Provider.of<TimerService>(context, listen: false).reset,
-              icon: const Icon(
+              icon: Icon(
                 Icons.refresh_sharp,
-                color: Colors.white,
+                color: renderColor(provider.currentState),
                 size: 30,
               ),
           ),
@@ -37,16 +37,16 @@ class PomodoroScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           alignment: Alignment.center,
-          child: Column(
+          child: const Column(
             children: [
-              const SizedBox(height: 15,),
-              const TimerCard(),
-              const SizedBox(height: 50,),
+              SizedBox(height: 15,),
+              TimerCard(),
+              SizedBox(height: 50,),
               TimeOptions(),
-              const SizedBox(height: 70,),
-              const TimeController(),
-              const SizedBox(height: 60,),
-              const ProgressWidget(),
+              SizedBox(height: 70,),
+              TimeController(),
+              SizedBox(height: 60,),
+              ProgressWidget(),
             ],
           ),
         ),

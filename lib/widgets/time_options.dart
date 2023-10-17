@@ -26,7 +26,7 @@ class TimeOptions extends StatelessWidget {
               decoration: int.parse(time) == provider.selectedTime ?
               BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
-                color: Colors.white,
+                color: renderColor(provider.currentState),
                 border: Border.all(
                   color: Colors.white54,
                   width: 1.5,
@@ -34,16 +34,16 @@ class TimeOptions extends StatelessWidget {
               ) :
               BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
-                color: renderColor(provider.currentState),
+                color: renderBackgroundColor(provider.currentState),
                 border: Border.all(
-                  color: Colors.white70,
+                  color: renderColor(provider.currentState),
                   width: 1.5,
                 ),
               ),
               child: Center(
                   child: Text(
                     (int.parse(time) ~/ 60).toString(),
-                    style: textStyle(25, int.parse(time) == provider.selectedTime ? renderColor(provider.currentState) : Colors.white, FontWeight.bold),
+                    style: textStyle(25, int.parse(time) == provider.selectedTime ? renderBackgroundColor(provider.currentState) : renderColor(provider.currentState), FontWeight.bold),
                   )
               ),
             ),
