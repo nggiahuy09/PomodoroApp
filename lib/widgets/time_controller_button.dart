@@ -31,7 +31,7 @@ class _TimeControllerState extends State<TimeController> with SingleTickerProvid
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
         color: Colors.black12,
-      ),c
+      ),
       // child: IconButton(
       //   onPressed: () {
       //     provider.timerPlaying ?
@@ -62,6 +62,7 @@ class _TimeControllerState extends State<TimeController> with SingleTickerProvid
             icon: AnimatedIcons.play_pause,
             progress: _animationController,
             size: 55,
+            color: renderColor(provider.currentState),
           ),
         ),
       )
