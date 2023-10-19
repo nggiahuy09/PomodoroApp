@@ -10,7 +10,17 @@ class TimeController extends StatefulWidget {
   State<TimeController> createState() => _TimeControllerState();
 }
 
-class _TimeControllerState extends State<TimeController> {
+class _TimeControllerState extends State<TimeController> with SingleTickerProviderStateMixin{
+  // controller
+  late AnimationController _animationController;
+
+  // init controller
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(vsync: this, duration: const Duration(milliseconds: 500));
+  }
+
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<TimerService>(context);
@@ -21,19 +31,40 @@ class _TimeControllerState extends State<TimeController> {
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
         color: Colors.black12,
-      ),
-      child: IconButton(
-        onPressed: () {
-          provider.timerPlaying ? 
-          Provider.of<TimerService>(context, listen: false).pause() : 
-          Provider.of<TimerService>(context, listen: false).start();
-        },
-        icon: Icon(
-          provider.timerPlaying == true ? Icons.pause : Icons.play_arrow,
-          size: 55,
-          color: renderColor(provider.currentState),
+      ),c
+      // child: IconButton(
+      //   onPressed: () {
+      //     provider.timerPlaying ?
+      //     Provider.of<TimerService>(context, listen: false).pause() :
+      //     Provider.of<TimerService>(context, listen: false).start();
+      //   },
+      //   icon: Icon(
+      //     provider.timerPlaying == true ? Icons.pause : Icons.play_arrow,
+      //     size: 55,
+      //     color: renderColor(provider.currentState),
+      //   ),
+      // ),
+      child: Center(
+        child: GestureDetector(
+          onTap: () {
+            if(provider.timerPlaying == true) {
+              setState(() {
+                _animationController.reverse();
+                Provider.of<TimerService>(context, listen: false).pause();
+              });
+            } else {
+              setState(() {
+                _animationController.forward();
+                Provider.of<TimerService>(context, listen: false).start();
+              });
+            }},
+          child: AnimatedIcon(
+            icon: AnimatedIcons.play_pause,
+            progress: _animationController,
+            size: 55,
+          ),
         ),
-      ),
+      )
     );
   }
 }
