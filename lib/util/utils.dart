@@ -29,9 +29,9 @@ List selectableTimes = [
 Color renderBackgroundColor(String currentState) {
   Color color;
 
-  if(currentState == "FOCUS") {
+  if (currentState == "FOCUS") {
     color = const Color.fromARGB(255, 239, 75, 75);
-  } else if(currentState == "BREAK") {
+  } else if (currentState == "BREAK") {
     color = const Color.fromARGB(255, 145, 145, 144);
   } else {
     color = const Color.fromARGB(255, 242, 227, 201);
@@ -42,10 +42,11 @@ Color renderBackgroundColor(String currentState) {
 
 Color renderColor(String currentState) {
   Color color = Colors.white;
-  if(currentState == "FOCUS" || currentState == "BREAK") {
+  if (currentState == "FOCUS" || currentState == "BREAK") {
     color = Colors.white;
   } else {
     color = Colors.black54;
   }
+
   return color;
 }

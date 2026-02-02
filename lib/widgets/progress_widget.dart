@@ -14,12 +14,12 @@ class ProgressWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Column(
+          spacing: 15.0,
           children: [
             Text(
               "${provider.rounds}/4",
               style: textStyle(30, renderColor(provider.currentState), FontWeight.bold),
             ),
-            const SizedBox(height: 15,),
             Text(
               'ROUND',
               style: textStyle(30, renderColor(provider.currentState), FontWeight.bold),
@@ -27,17 +27,17 @@ class ProgressWidget extends StatelessWidget {
           ],
         ),
         Column(
+          spacing: 15.0,
           children: [
             Text(
               "${provider.goals}/12",
               style: textStyle(30, renderColor(provider.currentState), FontWeight.bold),
             ),
-            const SizedBox(height: 15,),
             Text(
               'GOAL',
               style: textStyle(30, renderColor(provider.currentState), FontWeight.bold),
             ),
-          ]
+          ],
         ),
       ],
     );
