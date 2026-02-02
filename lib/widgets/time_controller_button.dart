@@ -10,7 +10,7 @@ class TimeController extends StatefulWidget {
   State<TimeController> createState() => _TimeControllerState();
 }
 
-class _TimeControllerState extends State<TimeController> with SingleTickerProviderStateMixin{
+class _TimeControllerState extends State<TimeController> with SingleTickerProviderStateMixin {
   // controller
   late AnimationController _animationController;
 
@@ -47,7 +47,7 @@ class _TimeControllerState extends State<TimeController> with SingleTickerProvid
       child: Center(
         child: GestureDetector(
           onTap: () {
-            if(provider.timerPlaying == true) {
+            if (provider.timerPlaying == true) {
               setState(() {
                 _animationController.reverse();
                 Provider.of<TimerService>(context, listen: false).pause();
@@ -57,7 +57,8 @@ class _TimeControllerState extends State<TimeController> with SingleTickerProvid
                 _animationController.forward();
                 Provider.of<TimerService>(context, listen: false).start();
               });
-            }},
+            }
+          },
           child: AnimatedIcon(
             icon: AnimatedIcons.play_pause,
             progress: _animationController,
@@ -65,7 +66,7 @@ class _TimeControllerState extends State<TimeController> with SingleTickerProvid
             color: renderColor(provider.currentState),
           ),
         ),
-      )
+      ),
     );
   }
 }

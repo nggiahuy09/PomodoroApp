@@ -12,13 +12,11 @@ class TimerCard extends StatelessWidget {
     final seconds = provider.currentDuration % 60;
 
     return Column(
+      spacing: 40.0,
       children: [
         Text(
           provider.currentState,
           style: textStyle(35, renderColor(provider.currentState), FontWeight.w700),
-        ),
-        const SizedBox(
-          height: 40,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -31,7 +29,7 @@ class TimerCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
+                    color: Colors.grey.withValues(alpha: 0.5),
                     spreadRadius: 4,
                     blurRadius: 4,
                     offset: const Offset(0, 2),
@@ -57,7 +55,7 @@ class TimerCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
+                    color: Colors.grey.withValues(alpha: 0.5),
                     spreadRadius: 4,
                     blurRadius: 4,
                     offset: const Offset(0, 2),

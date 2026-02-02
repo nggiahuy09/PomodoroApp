@@ -25,12 +25,12 @@ class PomodoroScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-              onPressed: Provider.of<TimerService>(context, listen: false).reset,
-              icon: Icon(
-                Icons.refresh_sharp,
-                color: renderColor(provider.currentState),
-                size: 30,
-              ),
+            onPressed: Provider.of<TimerService>(context, listen: false).reset,
+            icon: Icon(
+              Icons.refresh_sharp,
+              color: renderColor(provider.currentState),
+              size: 30,
+            ),
           ),
         ],
       ),
@@ -39,13 +39,13 @@ class PomodoroScreen extends StatelessWidget {
           alignment: Alignment.center,
           child: const Column(
             children: [
-              SizedBox(height: 15,),
+              SizedBox(height: 15),
               TimerCard(),
-              SizedBox(height: 50,),
+              SizedBox(height: 50),
               TimeOptions(),
-              SizedBox(height: 70,),
+              SizedBox(height: 70),
               TimeController(),
-              SizedBox(height: 60,),
+              SizedBox(height: 60),
               ProgressWidget(),
             ],
           ),
@@ -53,5 +53,4 @@ class PomodoroScreen extends StatelessWidget {
       ),
     );
   }
-
 }
