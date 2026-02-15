@@ -1,12 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:pomodoro/presentation/widgets/duration_selector_widget.dart';
-import 'package:pomodoro/presentation/widgets/timer_circle_widget.dart';
-import 'package:pomodoro/presentation/widgets/timer_controls_widget.dart';
-import 'package:pomodoro/presentation/widgets/up_next_widget.dart';
+import 'package:pomodoro/features/timer/presentation/widgets/duration_selector_widget.dart';
+import 'package:pomodoro/features/timer/presentation/widgets/timer_circle_widget.dart';
+import 'package:pomodoro/features/timer/presentation/widgets/timer_controls_widget.dart';
+import 'package:pomodoro/features/timer/presentation/widgets/up_next_widget.dart';
 
-import '../../theme/theme.dart';
+import '../../../../core/theme/theme.dart';
 
 class TimerView extends StatefulWidget {
   const TimerView({super.key});
