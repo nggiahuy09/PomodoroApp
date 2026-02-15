@@ -1,16 +1,49 @@
-# pomodoro
+# popomomo
 
-A new Flutter project.
+## 📘 popomomo
 
-## Getting Started
+A minimal, analytics-driven Pomodoro application built with Flutter using Clean Architecture & Bloc.
 
-This project is a starting point for a Flutter application.
+## ✨ Features
 
-A few resources to get you started if this is your first Flutter project:
+⏱ Timer
+- Custom focus duration
+- Auto-switch to break
+- Pause / Resume / Restart / Stop
+- Up Next preview
+- Focus–Break cycle
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+📊 Statlytics
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Today focus & break summary
+- Weekly average
+- Monthly overview
+- Focus–Break ratio
+- Calendar view
+- Year heatmap
+
+⚙ Settings
+
+- Break duration customization
+- Default focus duration
+- Auto-start next session
+- Theme (future)
+
+## 🏗 Architecture
+
+The project follows Clean Architecture: Presentation → Domain → Data
+Tech Stack
+
+- State management: Bloc
+- Navigation: GoRouter
+- Local storage: Hive / Isar
+- Language: Dart
+- Framework: Flutter
+
+## 🚀 Future Improvements
+
+- Background timer support
+- Push notifications
+- Export statistics
+- Cloud sync (BE integrate)
+- Advanced analytics dashboard
