@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import '../../theme/theme.dart';
+import '../../../../core/theme/theme.dart';
 
 class TimerCircleWidget extends StatelessWidget {
   const TimerCircleWidget({super.key, required this.remainingSeconds, required this.animationCtrl});

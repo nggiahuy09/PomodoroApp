@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../theme/theme.dart';
+import '../../../../core/theme/theme.dart';
 
 class DurationSelectorWidget extends StatelessWidget {
   const DurationSelectorWidget({super.key, required this.selectedMinutes, required this.durations, required this.onChangedDuration});
