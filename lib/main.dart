@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:pomodoro/functionality/time_service.dart';
-import 'package:pomodoro/screens/pomodoro_screen.dart';
+import 'package:pomodoro/screens/timer_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(
     ChangeNotifierProvider<TimerService>(
       create: (_) => TimerService(),
-      child: const MyApp(),
+      child: const Popomomo(),
     ),
   );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Popomomo extends StatelessWidget {
+  const Popomomo({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PomodoroScreen(),
+      home: TimerScreen(),
     );
   }
 }
