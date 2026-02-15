@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pomodoro/functionality/time_service.dart';
-import 'package:pomodoro/screens/timer_screen.dart';
+import 'package:pomodoro/presentation/views/timer_view.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -19,7 +19,7 @@ class Popomomo extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: TimerScreen(),
+      home: TimerView(),
     );
   }
 }
